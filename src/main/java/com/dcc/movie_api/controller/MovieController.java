@@ -23,12 +23,17 @@ public class MovieController {
     public List<Movie> findAllMovies(){
         return movieService.getAllMovies();
     }
-@GetMapping("/movies/{id}")
+    @GetMapping("/movies/{id}")
     public Movie findMovieById(@PathVariable Integer id){
         return movieService.getById(id);
     }
     @GetMapping("/findByGenre/{genre}")
     public List<Movie> findMovieByGenre(@PathVariable String genre){
         return movieService.getByGenre(genre);
+    }
+
+    @GetMapping("/findByName/{name}")
+    public List<Movie> findMovieByName(@PathVariable String name){
+        return movieService.getByName(name);
     }
 }
