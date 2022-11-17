@@ -19,6 +19,16 @@ public class MovieController {
         return movieService.saveMovie(movie);
     }
 
+    @PutMapping("/updateMovie/{id}")
+    public Movie updateMovie(@RequestBody Movie newMovie, @PathVariable Integer id){
+        Movie movie = movieService.getById(id);
+
+            movie.setName(newMovie.getName());
+            movie.setGenre(newMovie.getGenre());
+            movie.setDirector(newMovie.getDirector());
+        return movieService.saveMovie(movie);
+    }
+
     @DeleteMapping("/deleteMovie/{id}")
     public void deleteById(@PathVariable Integer id){
         movieService.deleteById(id);
