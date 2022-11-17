@@ -16,6 +16,10 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
+    public void deleteById(Integer id){
+        movieRepository.deleteById(id);
+    }
+
     public List<Movie> getAllMovies(){
         return movieRepository.findAll();
     }

@@ -19,6 +19,11 @@ public class MovieController {
         return movieService.saveMovie(movie);
     }
 
+    @DeleteMapping("/deleteMovie/{id}")
+    public void deleteById(@PathVariable Integer id){
+        movieService.deleteById(id);
+    }
+
     @GetMapping("/movies")
     public List<Movie> findAllMovies(){
         return movieService.getAllMovies();
